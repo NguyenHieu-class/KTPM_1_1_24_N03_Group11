@@ -27,34 +27,6 @@
 
 ### Hướng dẫn cài đặt
 
-1. Clone repository:
-
-    ```bash
-    git clone https://github.com/NguyenHieu-class/KTPM_1_1_24_N03_Group11.git
-    ```
-
-2. Cài đặt các gói phụ thuộc:
-
-    ```bash
-    npm install
-    ```
-
-3. Tạo tệp `.env` để lưu trữ các biến môi trường:
-
-    ```env
-    PORT=3000
-    MONGO_URI=chuoi-ket-noi-mongodb-cua-ban
-    SESSION_SECRET=chuoi-bao-mat-cho-session
-    ```
-
-4. Chạy ứng dụng:
-
-    ```bash
-    npm start
-    ```
-
-5. Mở trình duyệt và truy cập `http://localhost:3000` để sử dụng ứng dụng.
-
 ## Sử dụng
 
 1. Truy cập trang web.
