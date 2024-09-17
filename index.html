@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konami - Cùng Bạn Đến Mọi Hành Trình</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="logo-container">
+          <img src="soi.png" alt="Logo" class="logo">
+          <span class="company-name">Tên Công Ty Của Bạn</span>
+        </div>
+      
+        <div class="company-info">
+          <span>Về Konami</span>
+          <span>Trở thành chủ xe</span>
+          <span>Đăng ký</span>
+          <span>Đăng nhập</span>
+        </div>
+      </header>
+
+    <section class="container">
+        <!-- Hình ảnh to đùng -->
+        <img src="soi.png" alt="Mioto Background Image"> 
+
+        <div>
+            <h1>Konami - Cùng Bạn Đến Mọi Hành Trình</h1>
+            <p>Trải nghiệm sự khác biệt từ hơn 8000 xe gia đình đời mới khắp Việt Nam</p>
+        </div>
+
+        <!-- Mục chọn xe -->
+        <div class="vehicle-selection">
+            <button class="active">Xe tự lái</button>
+            <button>Xe có tài xế</button>
+            <button>Thuê xe dài hạn</button>
+        </div>
+
+        <!-- Thanh tìm kiếm -->
+        <div class="search-bar">
+            <select>
+                <option value="HCM">TP. Hồ Chí Minh</option>
+                <option value="HN">Hà Nội</option>
+                <option value="DN">Đà Nẵng</option>
+            </select>
+            <input type="datetime-local" value="2024-09-16T21:00">
+            <input type="datetime-local" value="2024-09-17T20:00">
+            <button>Tìm Xe</button>
+        </div>
+    </section>
+    <script>
+        // Get all buttons
+        const buttons = document.querySelectorAll('.vehicle-selection button');
+
+        // Add event listener to each button
+        buttons.forEach(button => {
+            button.addEventListener('click', function () {
+                // Remove 'active' class from all buttons
+                buttons.forEach(btn => btn.classList.remove('active'));
+                
+                // Add 'active' class to the clicked button
+                this.classList.add('active');
+            });
+        });
+        
+    </script>
+
+      <!-- Promotion Section -->
+      <section class="promotion-section">
+        <h2>Chương Trình Khuyến Mãi</h2>
+        <p>Nhận nhiều ưu đãi hấp dẫn từ Konami</p>
+
+        <div class="carousel">
+            <div class="carousel-wrapper">
+                <!-- First Promo -->
+                <div class="carousel-item">
+                    <img src="soi.png" alt="Promo 1">
+                    <h3>Rước Đèn Lung Linh - Giảm ngay 120.000đ</h3>
+                </div>
+                <!-- Second Promo -->
+                <div class="carousel-item">
+                    <img src="soi.png" alt="Promo 2">
+                    <h3>Đặt Xe Tiện Lợi - Thoải Mái Vi Vu</h3>
+                </div>
+                <!-- Third Promo -->
+                <div class="carousel-item">
+                    <img src="soi.png" alt="Promo 3">
+                    <h3>7 Chỗ Rộng Thênh - Giảm ngay 120K</h3>
+                </div>
+                <div class="carousel-item">
+                    <img src="soi.png" alt="Promo 4">
+                    <h3>7 Chỗ Rộng Thênh - Giảm ngay 120K</h3>
+                </div>
+                <div class="carousel-item">
+                    <img src="soi.png" alt="Promo 5">
+                    <h3>7 Chỗ Rộng Thênh - Giảm ngay 120K</h3>
+                </div>
+                <div class="carousel-item">
+                    <img src="soi.png" alt="Promo 6">
+                    <h3>7 Chỗ Rộng Thênh - Giảm ngay 120K</h3>
+                </div>
+                <div class="carousel-item">
+                    <img src="soi.png" alt="Promo 7">
+                    <h3>7 Chỗ Rộng Thênh - Giảm ngay 120K</h3>
+                </div>
+                <div class="carousel-item">
+                    <img src="soi.png" alt="Promo 8">
+                    <h3>7 Chỗ Rộng Thênh - Giảm ngay 120K</h3>
+                </div>
+                <div class="carousel-item">
+                    <img src="soi.png" alt="Promo 9">
+                    <h3>7 Chỗ Rộng Thênh - Giảm ngay 120K</h3>
+                </div>
+            </div>
+
+            <!-- Carousel Controls -->
+            <div class="carousel-controls">
+                <button id="prevBtn">
+                    <img src="soi.png" alt="Previous">
+                </button>
+                <button id="nextBtn">
+                    <img src="soi.png" alt="Next">
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // JavaScript for carousel functionality
+        const carouselWrapper = document.querySelector('.carousel-wrapper');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        let currentIndex = 0;
+        const totalItems = document.querySelectorAll('.carousel-item').length;
+        const maxIndex = totalItems - 3; 
+
+        prevBtn.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                carouselWrapper.style.transform = `translateX(-${currentIndex * 33.33}%)`;
+            }
+        });
+
+        nextBtn.addEventListener('click', () => {
+            if (currentIndex < maxIndex) {
+                currentIndex++;
+                carouselWrapper.style.transform = `translateX(-${currentIndex * 33.33}%)`;
+            }
+        });
+    </script>
+    
+
+    <section class="car-listing-section">
+        <h2 class="car-listing-title">Xe Dành Cho Bạn</h2>
+        <div class="car-listing-grid">
+            <!-- Thẻ xe đầu tiên -->
+            <div class="car-card">
+                <div class="car-image">
+                    <img src="car1.jpg" alt="Car 1">
+                </div>
+                <div class="car-info">
+                    <h3>MITSUBISHI PAJERO SPORT 2015</h3>
+                    <p>Quận Bình Thạnh, TP. Hồ Chí Minh</p>
+                    <div class="tags">
+                        <span class="tag-automatic">Số tự động</span>
+                        <span class="tag-delivery">Giao xe tận nơi</span>
+                    </div>
+                    <div class="ratings">
+                        <span class="rating-stars">4.2 ★</span>
+                        <span class="trips">34 chuyến</span>
+                    </div>
+                    <div class="price-discount">
+                        <span class="discount">Giảm 15%</span>
+                        <span class="price">821K / ngày</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Thẻ xe thứ hai -->
+            <div class="car-card">
+                <div class="car-image">
+                    <img src="car2.jpg" alt="Car 2">
+                </div>
+                <div class="car-info">
+                    <h3>MITSUBISHI XPANDER 2023</h3>
+                    <p>Quận Bình Thạnh, TP. Hồ Chí Minh</p>
+                    <div class="tags">
+                        <span class="tag-automatic">Số tự động</span>
+                        <span class="tag-delivery">Giao xe tận nơi</span>
+                    </div>
+                    <div class="ratings">
+                        <span class="rating-stars">5.0 ★</span>
+                        <span class="trips">60 chuyến</span>
+                    </div>
+                    <div class="price-discount">
+                        <span class="discount">Giảm 14%</span>
+                        <span class="price">833K / ngày</span>
+                    </div>
+                </div>
+            </div>
+            <div class="car-card">
+                <div class="car-image">
+                    <img src="car2.jpg" alt="Car 2">
+                </div>
+                <div class="car-info">
+                    <h3>MITSUBISHI XPANDER 2023</h3>
+                    <p>Quận Bình Thạnh, TP. Hồ Chí Minh</p>
+                    <div class="tags">
+                        <span class="tag-automatic">Số tự động</span>
+                        <span class="tag-delivery">Giao xe tận nơi</span>
+                    </div>
+                    <div class="ratings">
+                        <span class="rating-stars">5.0 ★</span>
+                        <span class="trips">60 chuyến</span>
+                    </div>
+                    <div class="price-discount">
+                        <span class="discount">Giảm 14%</span>
+                        <span class="price">833K / ngày</span>
+                    </div>
+                </div>
+            </div>
+            <div class="car-card">
+                <div class="car-image">
+                    <img src="car2.jpg" alt="Car 2">
+                </div>
+                <div class="car-info">
+                    <h3>MITSUBISHI XPANDER 2023</h3>
+                    <p>Quận Bình Thạnh, TP. Hồ Chí Minh</p>
+                    <div class="tags">
+                        <span class="tag-automatic">Số tự động</span>
+                        <span class="tag-delivery">Giao xe tận nơi</span>
+                    </div>
+                    <div class="ratings">
+                        <span class="rating-stars">5.0 ★</span>
+                        <span class="trips">60 chuyến</span>
+                    </div>
+                    <div class="price-discount">
+                        <span class="discount">Giảm 14%</span>
+                        <span class="price">833K / ngày</span>
+                    </div>
+                </div>
+            </div>
+            <div class="car-card">
+                <div class="car-image">
+                    <img src="car2.jpg" alt="Car 2">
+                </div>
+                <div class="car-info">
+                    <h3>MITSUBISHI XPANDER 2023</h3>
+                    <p>Quận Bình Thạnh, TP. Hồ Chí Minh</p>
+                    <div class="tags">
+                        <span class="tag-automatic">Số tự động</span>
+                        <span class="tag-delivery">Giao xe tận nơi</span>
+                    </div>
+                    <div class="ratings">
+                        <span class="rating-stars">5.0 ★</span>
+                        <span class="trips">60 chuyến</span>
+                    </div>
+                    <div class="price-discount">
+                        <span class="discount">Giảm 14%</span>
+                        <span class="price">833K / ngày</span>
+                    </div>
+                </div>
+            </div>
+            <div class="car-card">
+                <div class="car-image">
+                    <img src="car2.jpg" alt="Car 2">
+                </div>
+                <div class="car-info">
+                    <h3>MITSUBISHI XPANDER 2023</h3>
+                    <p>Quận Bình Thạnh, TP. Hồ Chí Minh</p>
+                    <div class="tags">
+                        <span class="tag-automatic">Số tự động</span>
+                        <span class="tag-delivery">Giao xe tận nơi</span>
+                    </div>
+                    <div class="ratings">
+                        <span class="rating-stars">5.0 ★</span>
+                        <span class="trips">60 chuyến</span>
+                    </div>
+                    <div class="price-discount">
+                        <span class="discount">Giảm 14%</span>
+                        <span class="price">833K / ngày</span>
+                    </div>
+                </div>
+            </div>
+            <div class="car-card">
+                <div class="car-image">
+                    <img src="car2.jpg" alt="Car 2">
+                </div>
+                <div class="car-info">
+                    <h3>MITSUBISHI XPANDER 2023</h3>
+                    <p>Quận Bình Thạnh, TP. Hồ Chí Minh</p>
+                    <div class="tags">
+                        <span class="tag-automatic">Số tự động</span>
+                        <span class="tag-delivery">Giao xe tận nơi</span>
+                    </div>
+                    <div class="ratings">
+                        <span class="rating-stars">5.0 ★</span>
+                        <span class="trips">60 chuyến</span>
+                    </div>
+                    <div class="price-discount">
+                        <span class="discount">Giảm 14%</span>
+                        <span class="price">833K / ngày</span>
+                    </div>
+                </div>
+            </div>
+            <div class="car-card">
+                <div class="car-image">
+                    <img src="car2.jpg" alt="Car 2">
+                </div>
+                <div class="car-info">
+                    <h3>MITSUBISHI XPANDER 2023</h3>
+                    <p>Quận Bình Thạnh, TP. Hồ Chí Minh</p>
+                    <div class="tags">
+                        <span class="tag-automatic">Số tự động</span>
+                        <span class="tag-delivery">Giao xe tận nơi</span>
+                    </div>
+                    <div class="ratings">
+                        <span class="rating-stars">5.0 ★</span>
+                        <span class="trips">60 chuyến</span>
+                    </div>
+                    <div class="price-discount">
+                        <span class="discount">Giảm 14%</span>
+                        <span class="price">833K / ngày</span>
+                    </div>
+                </div>
+            </div>
+            <div class="car-card">
+                <div class="car-image">
+                    <img src="car2.jpg" alt="Car 2">
+                </div>
+                <div class="car-info">
+                    <h3>MITSUBISHI XPANDER 2023</h3>
+                    <p>Quận Bình Thạnh, TP. Hồ Chí Minh</p>
+                    <div class="tags">
+                        <span class="tag-automatic">Số tự động</span>
+                        <span class="tag-delivery">Giao xe tận nơi</span>
+                    </div>
+                    <div class="ratings">
+                        <span class="rating-stars">5.0 ★</span>
+                        <span class="trips">60 chuyến</span>
+                    </div>
+                    <div class="price-discount">
+                        <span class="discount">Giảm 14%</span>
+                        <span class="price">833K / ngày</span>
+                    </div>
+                </div>
+            </div>
+            <div class="car-card">
+                <div class="car-image">
+                    <img src="car2.jpg" alt="Car 2">
+                </div>
+                <div class="car-info">
+                    <h3>MITSUBISHI XPANDER 2023</h3>
+                    <p>Quận Bình Thạnh, TP. Hồ Chí Minh</p>
+                    <div class="tags">
+                        <span class="tag-automatic">Số tự động</span>
+                        <span class="tag-delivery">Giao xe tận nơi</span>
+                    </div>
+                    <div class="ratings">
+                        <span class="rating-stars">5.0 ★</span>
+                        <span class="trips">60 chuyến</span>
+                    </div>
+                    <div class="price-discount">
+                        <span class="discount">Giảm 14%</span>
+                        <span class="price">833K / ngày</span>
+                    </div>
+                </div>
+            </div>
+            <div class="car-card">
+                <div class="car-image">
+                    <img src="car2.jpg" alt="Car 2">
+                </div>
+                <div class="car-info">
+                    <h3>MITSUBISHI XPANDER 2023</h3>
+                    <p>Quận Bình Thạnh, TP. Hồ Chí Minh</p>
+                    <div class="tags">
+                        <span class="tag-automatic">Số tự động</span>
+                        <span class="tag-delivery">Giao xe tận nơi</span>
+                    </div>
+                    <div class="ratings">
+                        <span class="rating-stars">5.0 ★</span>
+                        <span class="trips">60 chuyến</span>
+                    </div>
+                    <div class="price-discount">
+                        <span class="discount">Giảm 14%</span>
+                        <span class="price">833K / ngày</span>
+                    </div>
+                </div>
+            </div>
+            <div class="car-card">
+                <div class="car-image">
+                    <img src="car2.jpg" alt="Car 2">
+                </div>
+                <div class="car-info">
+                    <h3>MITSUBISHI XPANDER 2023</h3>
+                    <p>Quận Bình Thạnh, TP. Hồ Chí Minh</p>
+                    <div class="tags">
+                        <span class="tag-automatic">Số tự động</span>
+                        <span class="tag-delivery">Giao xe tận nơi</span>
+                    </div>
+                    <div class="ratings">
+                        <span class="rating-stars">5.0 ★</span>
+                        <span class="trips">60 chuyến</span>
+                    </div>
+                    <div class="price-discount">
+                        <span class="discount">Giảm 14%</span>
+                        <span class="price">833K / ngày</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Thêm các thẻ xe khác ở đây theo cùng cấu trúc -->
+        </div>
+    </section>
+    <div class="featured-locations">
+        <h2>Địa Điểm Nổi Bật</h2>
+        <div class="locations">
+          <div class="location">
+            <img src="hcmc.jpg" alt="TP. Hồ Chí Minh">
+            <p>TP. Hồ Chí Minh</p>
+            <span>3200+ xe</span>
+          </div>
+          <div class="location">
+            <img src="hanoi.jpg" alt="Hà Nội">
+            <p>Hà Nội</p>
+            <span>1400+ xe</span>
+          </div>
+          <div class="location">
+            <img src="danang.jpg" alt="Đà Nẵng">
+            <p>Đà Nẵng</p>
+            <span>320+ xe</span>
+          </div>
+          <div class="location">
+            <img src="binhduong.jpg" alt="Bình Dương">
+            <p>Bình Dương</p>
+            <span>330+ xe</span>
+          </div>
+        </div>
+      </div>
+      <div class="mioto-services">
+        <h2>Dịch Vụ Của Mioto</h2>
+        <div class="services">
+          <div class="service">
+            <img src="self-drive.jpg" alt="Thuê xe tự lái">
+            <div class="service-content">
+              <h3>Xe đã sẵn sàng. Bắt đầu hành trình ngay!</h3>
+              <p>Tự tay cầm lái chiếc xe bạn yêu thích cho hành trình thêm hứng khởi.</p>
+              <button>Thuê xe tự lái</button>
+            </div>
+          </div>
+          <div class="service">
+            <img src="driver-service.jpg" alt="Thuê xe có tài xế">
+            <div class="service-content">
+              <h3>Tài xế của bạn đã đến!</h3>
+              <p>Chuyến đi thêm thú vị cùng các bác tài 5* trên Mioto.</p>
+              <button>Thuê xe có tài xế</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section class="mioto-advantages">
+        <h2>Ưu Điểm Của Mioto</h2>
+        <p>Những tính năng giúp bạn dễ dàng hơn khi thuê xe trên Mioto.</p>
+        
+        <div class="advantage-list">
+            <div class="advantage-item">
+                <img src="icon1.png" alt="Lái xe an toàn">
+                <h3>Lái xe an toàn cùng Mioto</h3>
+                <p>Chuyến đi trên Mioto được bảo vệ với Gói bảo hiểm thuê xe tự lái từ MIC & VNI. Khách thuê sẽ được bồi thường tối đa 2.000,000VNĐ trong trường hợp có sự cố ngoài ý muốn.</p>
+            </div>
+    
+            <div class="advantage-item">
+                <img src="icon2.png" alt="An tâm đặt xe">
+                <h3>An tâm đặt xe</h3>
+                <p>Không tính phí huỷ chuyển trong vòng 1h sau khi đặt cọc. Hoàn cọc và bồi thường 100% nếu chủ xe huỷ chuyển trong vòng 7 ngày trước chuyến đi.</p>
+            </div>
+    
+            <div class="advantage-item">
+                <img src="icon3.png" alt="Thủ tục đơn giản">
+                <h3>Thủ tục đơn giản</h3>
+                <p>Chỉ cần có CCCD gắn chip (Hoặc Passport) & Giấy phép lái xe là bạn đã đủ điều kiện thuê xe trên Mioto.</p>
+            </div>
+    
+            <div class="advantage-item">
+                <img src="icon4.png" alt="Thanh toán dễ dàng">
+                <h3>Thanh toán dễ dàng</h3>
+                <p>Đa dạng hình thức thanh toán: ATM, thẻ Visa & Ví điện tử (Momo, VnPay, ZaloPay).</p>
+            </div>
+    
+            <div class="advantage-item">
+                <img src="icon5.png" alt="Giao xe tận nơi">
+                <h3>Giao xe tận nơi</h3>
+                <p>Bạn có thể lựa chọn giao xe tận nhà/sân bay... Phí tiết kiệm chỉ từ 15k/km.</p>
+            </div>
+    
+            <div class="advantage-item">
+                <img src="icon6.png" alt="Dòng xe đa dạng">
+                <h3>Dòng xe đa dạng</h3>
+                <p>Hơn 100 dòng xe cho bạn tuỳ lựa chọn: Mini, Sedan, CUV, SUV, MPV, Bán tải.</p>
+            </div>
+        </div>
+    </section>
+    
+
+
+      <!--Các dịch vụ-->
+      <div class="rental-guide">
+        <h2>Hướng Dẫn Thuê Xe</h2>
+        <p>Chỉ với 4 bước đơn giản để trải nghiệm thuê xe Mioto một cách nhanh chóng</p>
+        <div class="steps">
+          <div class="step">
+            <img src="step1.png" alt="Đặt xe">
+            <h3>01</h3>
+            <p>Đặt xe trên app/web Mioto</p>
+          </div>
+          <div class="step">
+            <img src="step2.png" alt="Nhận xe">
+            <h3>02</h3>
+            <p>Nhận xe</p>
+          </div>
+          <div class="step">
+            <img src="step3.png" alt="Bắt đầu hành trình">
+            <h3>03</h3>
+            <p>Bắt đầu hành trình</p>
+          </div>
+          <div class="step">
+            <img src="step4.png" alt="Trả xe">
+            <h3>04</h3>
+            <p>Trả xe & Kết thúc chuyến đi</p>
+          </div>
+        </div>
+      </div>
+      
+
+
+</body>
+
+</html>
