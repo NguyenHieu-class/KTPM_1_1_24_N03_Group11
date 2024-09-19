@@ -1,0 +1,79 @@
+body {
+    background-color: #f8f9fa;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+.card {
+    margin-top: 20px;
+}
+
+.img-fluid {
+    max-height: 150px;
+    margin-bottom: 10px;
+}
+
+.btn-outline-primary, .btn-outline-secondary, .btn-outline-success {
+    width: 100%;
+}
+/* styles.css */
+body, html {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 90%;
+    margin: 20px auto;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.header h1 {
+    color: green;
+    text-align: center;
+}
+
+.details {
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-column {
+    width: 60%;
+}
+
+.right-column {
+    width: 35%;
+    padding-left: 20px;
+}
+
+.specs, .additional-info, .pricing {
+    background-color: #e8e8e8;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.additional-info h2, .pricing h2 {
+    margin-top: 0;
+}
+
+button {
+    width: 100%;
+    padding: 10px 0;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
